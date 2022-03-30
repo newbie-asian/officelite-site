@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import Navbar from './components/Navbar';
+import Plan from './components/Plan';
+import Footer from './components/Footer';
+import planDatas from './planDatas';
 
 function App() {
+  const plans = planDatas.map((plan) => {
+    return <Plan plan={plan} />;
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar />
+
+      <div className="container mx-auto">
+        <div className="plan-container relative lg:flex lg:px-6">{plans}</div>
+      </div>
+
+      <Footer />
     </div>
   );
 }

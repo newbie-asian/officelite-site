@@ -1,13 +1,61 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: 'Kumbh Bold';
+    src: url('./assets/fonts/KumbhSans-Bold.ttf');
+  }
+
+  @font-face {
+    font-family: 'Kumbh Regular';
+    src: url('./assets/fonts/KumbhSans-Regular.ttf');
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@layer components {
+  .btn {
+    @apply py-4 px-8  font-kumbh-bold rounded-full;
+  }
+
+  .btn--primary {
+    @apply text-white bg-blue shadow-blue shadow-sm hover:bg-pale-blue hover:shadow-pale-blue;
+  }
+
+  .btn--secondary {
+    @apply text-blue bg-blue bg-opacity-20  hover:bg-opacity-30;
+  }
+
+  .btn--white {
+    @apply bg-white text-blue hover:text-opacity-50;
+  }
+
+  .plan {
+    @apply py-8 text-center;
+  }
+
+  .plan--white {
+    @apply bg-white text-darker-violet shadow-md;
+  }
+
+  .plan--white .plan--features {
+    @apply text-pale-violet;
+  }
+
+  .plan--blue {
+    @apply bg-blue text-white shadow-blue shadow-md bg-pattern-pricing bg-250% md:bg-120% md:bg-left-custom bg-top-custom bg-no-repeat lg:bg-top-custom lg:bg-250%;
+  }
+
+  .timer-container {
+    @apply bg-dark-violet px-4 py-3 rounded-md;
+  }
+
+  .timer__num {
+    @apply font-kumbh-bold text-[32px] md:text-2xl;
+  }
+
+  .timer__format {
+    @apply font-kumbh-bold text-xs text-pale-violet;
+  }
 }
