@@ -5,7 +5,7 @@ import planDatas from './planDatas';
 
 function App() {
   const plans = planDatas.map((plan) => {
-    return <Plan plan={plan} />;
+    return <Plan key={plan.id} plan={plan} />;
   });
 
   return (
