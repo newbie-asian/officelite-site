@@ -20,10 +20,10 @@ const Plan = ({ plan }) => {
         <h2 className="font-kumbh-bold text-2xl mb-4">{plan.price}</h2>
         <p>{plan.coverage}</p>
       </div>
-      <div className="mt-16 mb-2 md:basis-1/2  md:px-6 md:self-end lg:basis-0 ">
-        <p className="mb-6">{plan.features[0]}</p>
-        <p className="mb-6">{plan.features[1]}</p>
-        <p className="mb-6">{plan.features[2]}</p>
+      <div className="mt-16 mb-2 md:basis-1/2  md:px-6 md:self-end lg:basis-0 font-kumbh-regular">
+        <p className="mb-6 plan--features">{plan.features[0]}</p>
+        <p className="mb-6 plan--features">{plan.features[1]}</p>
+        <p className="mb-6 plan--features">{plan.features[2]}</p>
       </div>
       <div className="md:basis-1/2 md:px-6  lg:basis-0 ">
         <Button name="Try for Free" planType={plan.name} />
